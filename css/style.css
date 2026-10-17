@@ -1,0 +1,891 @@
+:root {
+  --color-primary: #0B1220;
+  --color-accent: #C9A24B;
+  --color-bg: #F5F6F8;
+  --color-white: #FFFFFF;
+  --color-text-muted: #5B6475;
+  --color-success: #1FA971;
+  --color-danger: #D64545;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-primary);
+}
+
+header {
+  background: var(--color-white);
+  padding: 16px 24px;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  padding: 24px;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.container h2 {
+  font-family: var(--font-heading);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(11, 18, 32, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(11, 18, 32, 0.12);
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #E3E6EB;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  padding: 16px;
+}
+
+.product-category {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.product-info h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 16px;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.old-price {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: var(--color-accent);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.toolbar input,
+.toolbar select {
+  padding: 12px 14px;
+  border: 1px solid #D5D9E0;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+.toolbar input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.toolbar input:focus,
+.toolbar select:focus {
+  outline: 2px solid var(--color-accent);
+  border-color: transparent;
+}
+
+.categories {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 4px;
+  overflow-x: auto;
+}
+
+.chip {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border: 1px solid #D5D9E0;
+  border-radius: 999px;
+  background: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.chip:hover {
+  border-color: var(--color-accent);
+}
+
+.chip.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-accent);
+}
+
+.result-count {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.rating {
+  font-size: 14px;
+  color: var(--color-accent);
+}
+
+.rating small {
+  color: var(--color-text-muted);
+}
+
+.product-card.out img {
+  opacity: 0.5;
+}
+
+.btn:disabled,
+.btn:disabled:hover {
+  background: #C9CDD6;
+  color: var(--color-white);
+  cursor: not-allowed;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 40px 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* Buyurtma sahifasi */
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  align-items: start;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(11, 18, 32, 0.06);
+}
+
+.checkout-form h3,
+.cart-summary h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+.checkout-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="tel"],
+.checkout-form select,
+.checkout-form textarea {
+  padding: 12px 14px;
+  border: 1px solid #D5D9E0;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+.checkout-form input:focus,
+.checkout-form select:focus,
+.checkout-form textarea:focus {
+  outline: 2px solid var(--color-accent);
+  border-color: transparent;
+}
+
+.checkout-form .invalid {
+  border-color: var(--color-danger);
+}
+
+.error {
+  color: var(--color-danger);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 16px;
+  border: 1px solid #D5D9E0;
+  border-radius: var(--radius);
+}
+
+.checkout-form .radio {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.success {
+  padding: 60px 20px;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(11, 18, 32, 0.06);
+  text-align: center;
+}
+
+.success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: var(--color-success);
+  color: var(--color-white);
+  font-size: 32px;
+}
+
+.order-number {
+  font-family: var(--font-heading);
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-link {
+  padding: 10px 16px;
+  border: 1px solid #D5D9E0;
+  border-radius: 999px;
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cart-link:hover {
+  border-color: var(--color-accent);
+}
+
+.cart-count {
+  display: inline-block;
+  min-width: 20px;
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.cart-count[hidden] {
+  display: none;
+}
+/* Savat sahifasi */
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 96px 1fr auto 130px 32px;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(11, 18, 32, 0.06);
+}
+
+/* Rasm uchun kvadrat quti: rasm qanday bo'lmasin, shu o'lchamda chiqadi */
+.cart-thumb {
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #E3E6EB;
+}
+
+.cart-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.cart-item-info h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 15px;
+}
+
+.muted {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #D5D9E0;
+  border-radius: 8px;
+  background: var(--color-white);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.qty-btn:hover {
+  border-color: var(--color-accent);
+}
+
+.cart-item-total {
+  font-weight: 600;
+  text-align: right;
+}
+
+.remove {
+  border: none;
+  background: none;
+  color: var(--color-danger);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  position: sticky;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(11, 18, 32, 0.06);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-row.total {
+  padding-top: 12px;
+  border-top: 1px solid #E3E6EB;
+  font-size: 18px;
+}
+
+.link-btn {
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.empty-cart {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.btn-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Planshet: savat va xulosa ustma-ust */
+@media (max-width: 800px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+  .cart-summary {
+    position: static;
+  }
+}
+
+/* Telefon: rasm kichikroq, qator ikki qavatli */
+@media (max-width: 600px) {
+  .cart-item {
+    grid-template-columns: 72px 1fr 32px;
+    grid-template-areas:
+      "thumb info remove"
+      "thumb qty  total";
+    gap: 8px 12px;
+  }
+  .cart-thumb { grid-area: thumb; width: 72px; height: 72px; }
+  .cart-item-info { grid-area: info; }
+  .remove { grid-area: remove; align-self: start; }
+  .qty { grid-area: qty; }
+  .cart-item-total { grid-area: total; align-self: center; }
+}
+
+/* Kartochkadagi havolalar */
+.card-img-link {
+  display: block;
+}
+
+.product-info h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-info h3 a:hover {
+  color: var(--color-accent);
+}
+
+/* Mahsulot sahifasi */
+.breadcrumb {
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(11, 18, 32, 0.06);
+}
+
+.detail-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  max-height: 480px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--color-bg);
+}
+
+.detail-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-info h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 26px;
+}
+
+.detail-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.price-big {
+  font-family: var(--font-heading);
+  font-size: 28px;
+}
+
+.badge-inline {
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stock {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.stock.in {
+  color: var(--color-success);
+}
+
+.stock.out {
+  color: var(--color-danger);
+}
+
+.detail-desc {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.buy-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.buy-row .btn {
+  flex: 1;
+  padding: 14px;
+}
+
+.specs,
+.related {
+  margin-top: 24px;
+}
+
+.specs {
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(11, 18, 32, 0.06);
+}
+
+.specs h3,
+.related h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+}
+
+.specs table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.specs th,
+.specs td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #E3E6EB;
+  font-size: 14px;
+  text-align: left;
+}
+
+.specs th {
+  width: 40%;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.related-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(11, 18, 32, 0.06);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+}
+
+.related-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.related-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Tipografiya ===== */
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* Tugma va maydonlar ham sayt shriftini olsin */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+.container h2 {
+  margin: 8px 0 20px;
+  font-size: 26px;
+}
+
+/* ===== Logotip ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.logo img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.logo-text span {
+  color: var(--color-accent);
+}
+
+
+/* Tugma doim kartochkaning eng pastida */
+.product-info .btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* Narxlar */
+.price-row {
+  flex-wrap: wrap;
+  row-gap: 2px;
+}
+
+.price,
+.price-big,
+.old-price,
+.cart-item-total {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.price {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.old-price {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.btn,
+.chip,
+.btn-link {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+/* ===== Mahsulot kartochkasi: yakuniy tuzilma ===== */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.product-card .product-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+}
+
+/* Nom: doim aniq 2 qator balandligida */
+.product-card .product-info h3 {
+  display: -webkit-box;
+  height: calc(1.35em * 2);
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.35;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Narx bloki: yuqorida narx, pastida eski narx, doim 2 qator */
+.product-card .price-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-height: 0;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.product-card .price {
+  white-space: nowrap;
+}
+
+.product-card .old-price {
+  min-height: 1.3em;
+  white-space: nowrap;
+  text-decoration: line-through;
+}
+
+.product-card .old-price.ghost {
+  text-decoration: none;
+}
+
+/* Tugma doim eng pastda, to'liq kenglikda */
+.product-card .product-info .btn {
+  width: 100%;
+  margin-top: 10px;
+}

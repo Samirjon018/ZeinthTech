@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZenithTech</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeinthTech</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-  <header>
-    <img src="images/logo.svg" alt="ZenithTech logotipi">
-  </header>
-  <h1>ZenithTech do'koniga xush kelibsiz</h1>
+    <body>
+  <header class="site-header">
+  <a href="index.html" class="logo">
+  <img src="images/logo-mark.svg" alt="">
+  <span class="logo-text">Zenith<span>Tech</span></span>
+</a>
+  <a href="cart.html" class="cart-link">🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span></a>
+</header>
+
+ <main class="container">
+  <h2>Mahsulotlar</h2>
+
+  <div class="toolbar">
+    <input type="search" id="search" placeholder="Mahsulot qidirish...">
+    <select id="sort">
+      <option value="default">Saralash</option>
+      <option value="price-asc">Narx: arzondan qimmatga</option>
+      <option value="price-desc">Narx: qimmatdan arzonga</option>
+      <option value="rating">Reyting bo'yicha</option>
+    </select>
+  </div>
+
+  <div id="categories" class="categories"></div>
+  <p id="result-count" class="result-count"></p>
+
+  <div id="product-grid" class="product-grid"></div>
+</main>
+
+  <script src="js/cart.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

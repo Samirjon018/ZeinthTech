@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyurtma berish | ZenithTech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo">
+  <img src="images/logo-mark.svg" alt="">
+  <span class="logo-text">Zenith<span>Tech</span></span>
+</a>
+    <a href="cart.html" class="cart-link">🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span></a>
+  </header>
+
+  <main class="container" id="checkout-page">
+    <h2>Buyurtma berish</h2>
+
+    <div class="checkout-layout">
+      <form id="checkout-form" class="checkout-form" novalidate>
+        <h3>Ma'lumotlaringiz</h3>
+
+        <label>Ism va familiya
+          <input type="text" name="name" placeholder="Masalan: Ali Valiyev">
+          <small class="error" data-error-for="name"></small>
+        </label>
+
+        <label>Telefon raqam
+          <input type="tel" name="phone" placeholder="+998 90 123 45 67">
+          <small class="error" data-error-for="phone"></small>
+        </label>
+
+        <label>Shahar / viloyat
+          <select name="city">
+            <option value="">Tanlang</option>
+            <option>Toshkent</option>
+            <option>Samarqand</option>
+            <option>Buxoro</option>
+            <option>Andijon</option>
+            <option>Farg'ona</option>
+            <option>Namangan</option>
+            <option>Qarshi</option>
+            <option>Navoiy</option>
+            <option>Jizzax</option>
+            <option>Guliston</option>
+            <option>Termiz</option>
+            <option>Urganch</option>
+            <option>Nukus</option>
+          </select>
+          <small class="error" data-error-for="city"></small>
+        </label>
+
+        <label>Manzil
+          <textarea name="address" rows="3" placeholder="Ko'cha, uy, xonadon"></textarea>
+          <small class="error" data-error-for="address"></small>
+        </label>
+
+        <fieldset class="payment">
+          <legend>To'lov usuli</legend>
+          <label class="radio">
+            <input type="radio" name="payment" value="Naqd pul" checked>
+            Yetkazib berilganda naqd pul
+          </label>
+          <label class="radio">
+            <input type="radio" name="payment" value="Karta">
+            Yetkazib berilganda karta orqali
+          </label>
+        </fieldset>
+
+        <label>Izoh (ixtiyoriy)
+          <textarea name="note" rows="2" placeholder="Masalan: qo'ng'iroq qilib keling"></textarea>
+        </label>
+
+        <button type="submit" class="btn">Buyurtmani tasdiqlash</button>
+      </form>
+
+      <aside class="cart-summary" id="order-summary"></aside>
+    </div>
+  </main>
+
+  <script src="js/cart.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>
