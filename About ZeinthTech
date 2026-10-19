@@ -1,0 +1,52 @@
+# ZenithTech: Electronics Online Store (Frontend)
+
+**Live demo:** https://ZeinthTech.vercel.app
+
+A multi-page online store for electronics and gadgets, inspired by Uzum Market
+and Wildberries. Built with vanilla HTML, CSS and JavaScript, with no frameworks.
+
+![Home page](screenshots/home.png)
+
+## Features
+
+- Product catalog loaded from a JSON file
+- Category filter, live search and sorting (price, rating)
+- Product detail page with specifications and related products
+- Shopping cart saved in `localStorage` (survives page reloads)
+- Checkout form with validation (Uzbek phone number format)
+- Orders saved locally, with a confirmation screen
+- Responsive layout for mobile, tablet and desktop
+
+## Tech stack
+
+HTML5, CSS3 (Grid, Flexbox, custom properties), JavaScript (ES6+, fetch,
+localStorage), deployed on Vercel.
+
+## Project structure
+
+\`\`\`
+zenithtech/
+├── index.html        # catalog
+├── product.html      # product details
+├── cart.html         # cart
+├── checkout.html     # checkout
+├── css/style.css
+├── js/               # cart.js, main.js, product.js, cart-page.js, checkout.js
+├── data/products.json
+└── images/
+\`\`\`
+
+## Run locally
+
+`fetch` needs an HTTP server, so don't open the HTML files directly.
+Use the VS Code **Live Server** extension and open `index.html`.
+
+## Next steps
+
+- Backend (Node.js + database) for real products and orders
+- Payment integration (Payme / Click)
+- User accounts and favorites
+
+## Author
+
+Samirjon Abdurakhimov: [GitHub](https://github.com/Samirjon018)
