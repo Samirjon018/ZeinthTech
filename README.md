@@ -1,8 +1,12 @@
-<div align="center"> <img src="images/logo.png" alt="ZenithTech logo" width="120" />
+<div align="center">
 
-⚡ ZenithTech
-Electronics & gadgets store, built from scratch with pure JavaScript.
+<img src="images/logo.png" alt="ZenithTech logo" width="120" />
 
-No frameworks. No backend. Just clean code and a marketplace-grade shopping experience.
+# ⚡ ZenithTech
+
+### Electronics & gadgets store, built from scratch with pure JavaScript.
+
+*No frameworks. No backend. Just clean code and a marketplace-grade shopping experience.*
 
 <br />
+
