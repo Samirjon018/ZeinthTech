@@ -11,7 +11,7 @@
 <br />
 
 [![Live Demo](https://img.shields.io/badge/🚀_LIVE_DEMO-Visit_Store-6C5CE7?style=for-the-badge)](https://zeinthtech.vercel.app/)
-[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://your-vercel-link-here)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://Vercel.com)
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
