@@ -21,7 +21,7 @@
 
 <br />
 
-<img src="images/screenshot.png" alt="ZenithTech preview" width="90%" />
+<img src="screenshots/home.png" alt="ZenithTech preview" width="90%" />
 
 </div>
 
