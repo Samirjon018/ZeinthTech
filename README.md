@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="images/logo.svg" alt="ZenithTech logo" width="120" />
+<img src="images/logo-mark.svg" alt="ZenithTech logo" width="120" />
 
 # ⚡ ZenithTech
 
