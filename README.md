@@ -97,7 +97,7 @@ Zenith Tech/
 
 bash
 # 1. Clone the repo
-git clone https://github.com/Samirjon018/ZenithTech.git
+git clone https://github.com/Samirjon018/ZeinthTech
 
 # 2. Enter the folder
 cd zenith-tech
