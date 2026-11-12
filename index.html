@@ -7,32 +7,79 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
     <body>
-  <header class="site-header">
-  <a href="index.html" class="logo">
-  <img src="images/logo-mark.svg" alt="">
-  <span class="logo-text">Zenith<span>Tech</span></span>
-</a>
-  <a href="cart.html" class="cart-link">🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span></a>
-</header>
-
- <main class="container">
-  <h2>Mahsulotlar</h2>
-
-  <div class="toolbar">
-    <input type="search" id="search" placeholder="Mahsulot qidirish...">
-    <select id="sort">
-      <option value="default">Saralash</option>
-      <option value="price-asc">Narx: arzondan qimmatga</option>
-      <option value="price-desc">Narx: qimmatdan arzonga</option>
-      <option value="rating">Reyting bo'yicha</option>
-    </select>
+   <div class="announce">
+    Bepul yetkazib berish: 1 000 000 so'mdan yuqori buyurtmalarda
   </div>
 
-  <div id="categories" class="categories"></div>
-  <p id="result-count" class="result-count"></p>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo-mark.svg" alt="">
+        <span class="logo-text">Zenith<span>Tech</span></span>
+      </a>
 
-  <div id="product-grid" class="product-grid"></div>
-</main>
+      <nav class="main-nav">
+        <a href="index.html">Bosh sahifa</a>
+        <a href="index.html#catalog">Katalog</a>
+        <a href="#contact">Aloqa</a>
+      </nav>
+
+      <a href="cart.html" class="cart-link">
+        🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span>
+      </a>
+    </div>
+  </header>
+   <main class="container" id="catalog">
+    <div class="section-head">
+      <span class="eyebrow">ZenithTech</span>
+      <h2>Mahsulotlar katalogi</h2>
+    </div>
+
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="Mahsulot qidirish...">
+      <select id="sort">
+        <option value="default">Saralash</option>
+        <option value="price-asc">Narx: arzondan qimmatga</option>
+        <option value="price-desc">Narx: qimmatdan arzonga</option>
+        <option value="rating">Reyting bo'yicha</option>
+      </select>
+    </div>
+
+    <div id="categories" class="categories"></div>
+    <p id="result-count" class="result-count"></p>
+
+    <div id="product-grid" class="product-grid"></div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="images/logo-mark.svg" alt="">
+          <span class="logo-text">Zenith<span>Tech</span></span>
+        </a>
+        <p>Original elektronika va gadjetlar: smartfon, quloqchin, soat va aksessuarlar.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Do'kon</h4>
+        <a href="index.html">Bosh sahifa</a>
+        <a href="index.html#catalog">Katalog</a>
+        <a href="cart.html">Savat</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Aloqa</h4>
+        <span>Telefon: +998 90 000 00 00</span>
+        <span>Har kuni: 09:00 - 21:00</span>
+        <span>O'zbekiston bo'ylab yetkazib berish</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 ZenithTech · Demo do'kon (o'quv loyihasi)
+    </div>
+  </footer>
 
   <script src="js/cart.js"></script>
 <script src="js/main.js"></script>

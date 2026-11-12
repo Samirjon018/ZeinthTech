@@ -9,12 +9,27 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+   <div class="announce">
+    Bepul yetkazib berish: 1 000 000 so'mdan yuqori buyurtmalarda
+  </div>
+
   <header class="site-header">
-    <a href="index.html" class="logo">
-  <img src="images/logo-mark.svg" alt="">
-  <span class="logo-text">Zenith<span>Tech</span></span>
-</a>
-    <a href="cart.html" class="cart-link">🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span></a>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo-mark.svg" alt="">
+        <span class="logo-text">Zenith<span>Tech</span></span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html">Bosh sahifa</a>
+        <a href="index.html#catalog">Katalog</a>
+        <a href="#contact">Aloqa</a>
+      </nav>
+
+      <a href="cart.html" class="cart-link">
+        🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span>
+      </a>
+    </div>
   </header>
 
   <main class="container" id="checkout-page">
@@ -81,6 +96,36 @@
       <aside class="cart-summary" id="order-summary"></aside>
     </div>
   </main>
+
+    <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="images/logo-mark.svg" alt="">
+          <span class="logo-text">Zenith<span>Tech</span></span>
+        </a>
+        <p>Original elektronika va gadjetlar: smartfon, quloqchin, soat va aksessuarlar.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Do'kon</h4>
+        <a href="index.html">Bosh sahifa</a>
+        <a href="index.html#catalog">Katalog</a>
+        <a href="cart.html">Savat</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Aloqa</h4>
+        <span>Telefon: +998 90 000 00 00</span>
+        <span>Har kuni: 09:00 - 21:00</span>
+        <span>O'zbekiston bo'ylab yetkazib berish</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 ZenithTech · Demo do'kon (o'quv loyihasi)
+    </div>
+  </footer>
 
   <script src="js/cart.js"></script>
 <script src="js/checkout.js"></script>
