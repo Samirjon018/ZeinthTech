@@ -120,7 +120,7 @@ Then open the address shown in your terminal.
 - [x] Cart with `localStorage`
 - [x] Checkout with form validation
 - [x] Deployed on Vercel
-- [ ] ❤️ Favorites (wishlist)
+- [x] ❤️ Favorites (wishlist)
 - [ ] 🔐 User accounts
 - [ ] 🧾 Backend and real orders
 
