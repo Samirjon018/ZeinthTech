@@ -26,9 +26,15 @@
         <a href="#contact">Aloqa</a>
       </nav>
 
-      <a href="cart.html" class="cart-link">
-        🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span>
-      </a>
+      <div class="header-actions">
+        <a href="favorites.html" class="cart-link fav-link" aria-label="Sevimlilar">
+          ♡ <span class="fav-label">Sevimlilar</span>
+          <span id="fav-count" class="cart-count" hidden>0</span>
+        </a>
+        <a href="cart.html" class="cart-link">
+          🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -128,6 +134,7 @@
   </footer>
 
   <script src="js/cart.js"></script>
+  <script src="js/favorites.js"></script>
 <script src="js/checkout.js"></script>
 </body>
 </html>

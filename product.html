@@ -12,8 +12,9 @@
    <div class="announce">
     Bepul yetkazib berish: 1 000 000 so'mdan yuqori buyurtmalarda
   </div>
+  
 
-  <header class="site-header">
+   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">
         <img src="images/logo-mark.svg" alt="">
@@ -26,9 +27,15 @@
         <a href="#contact">Aloqa</a>
       </nav>
 
-      <a href="cart.html" class="cart-link">
-        🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span>
-      </a>
+      <div class="header-actions">
+        <a href="favorites.html" class="cart-link fav-link" aria-label="Sevimlilar">
+          ♡ <span class="fav-label">Sevimlilar</span>
+          <span id="fav-count" class="cart-count" hidden>0</span>
+        </a>
+        <a href="cart.html" class="cart-link">
+          🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -64,6 +71,7 @@
   </footer>
 
   <script src="js/cart.js"></script>/* Kartochkadagi havolalar */
+  <script src="js/favorites.js"></script>/* Sevimlilar havolalari */
   <script src="js/product.js"></script>
 </body>
 </html>

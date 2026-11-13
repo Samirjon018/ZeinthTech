@@ -8,19 +8,6 @@ let products = [];
 let qty = 1;
 const MAX_QTY = 10;
 
-const PLACEHOLDER =
-  'data:image/svg+xml;utf8,' +
-  encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300">' +
-    '<rect width="100%" height="100%" fill="#E3E6EB"/>' +
-    '<text x="50%" y="50%" fill="#8A93A5" font-family="Arial" font-size="22" ' +
-    'text-anchor="middle" dominant-baseline="middle">ZenithTech</text></svg>'
-  );
-
-function formatPrice(n) {
-  return n.toLocaleString('ru-RU') + " so'm";
-}
-
 function showNotFound() {
   pageEl.innerHTML = `
     <div class="empty-cart">
@@ -45,8 +32,15 @@ async function init() {
   const product = products.find((p) => p.id === id);
   if (!product) return showNotFound();
 
+  ZT.addViewed(id); // ko'rilganlar ro'yxatiga yozib qo'yamiz
   document.title = `${product.name} | ZenithTech`;
   render(product);
+
+  ZT.renderViewed(products, {
+    section: document.getElementById('viewed-section'),
+    row: document.getElementById('viewed-row'),
+    excludeId: id,
+  });
 }
 
 function render(p) {
@@ -73,17 +67,22 @@ function render(p) {
     <div class="product-detail">
       <div class="detail-image">
         <img src="${p.image}" alt="${p.name}"
-             onerror="this.onerror=null; this.src='${PLACEHOLDER}'">
+             onerror="this.onerror=null; this.src='${ZT.placeholder}'">
       </div>
 
       <div class="detail-info">
         ${p.brand ? `<span class="product-category">${p.brand}</span>` : ''}
-        <h1>${p.name}</h1>
+
+        <div class="title-row">
+          <h1>${p.name}</h1>
+          ${ZT.heartHTML(p.id)}
+        </div>
+
         ${p.rating ? `<span class="rating">★ ${p.rating} <small>(${p.reviews} ta sharh)</small></span>` : ''}
 
         <div class="detail-price">
-          <span class="price-big">${formatPrice(p.price)}</span>
-          ${hasDiscount ? `<span class="old-price">${formatPrice(p.oldPrice)}</span>
+          <span class="price-big">${ZT.formatPrice(p.price)}</span>
+          ${hasDiscount ? `<span class="old-price">${ZT.formatPrice(p.oldPrice)}</span>
                            <span class="badge-inline">-${discount}%</span>` : ''}
         </div>
 
@@ -115,23 +114,16 @@ function render(p) {
         ? `<section class="related">
              <h3>O'xshash mahsulotlar</h3>
              <div class="related-grid">
-               ${related
-                 .map(
-                   (r) => `
-                 <a class="related-card" href="product.html?id=${r.id}">
-                   <img src="${r.image}" alt="${r.name}"
-                        onerror="this.onerror=null; this.src='${PLACEHOLDER}'">
-                   <div>
-                     <span>${r.name}</span>
-                     <strong>${formatPrice(r.price)}</strong>
-                   </div>
-                 </a>`
-                 )
-                 .join('')}
+               ${related.map((r) => ZT.miniCardHTML(r)).join('')}
              </div>
            </section>`
         : ''
     }
+
+    <section class="viewed-section" id="viewed-section" hidden>
+      <h3>Siz ko'rgan mahsulotlar</h3>
+      <div class="viewed-row" id="viewed-row"></div>
+    </section>
   `;
 }
 
@@ -157,5 +149,7 @@ pageEl.addEventListener('click', (e) => {
     setTimeout(() => (addBtn.textContent = "Savatga qo'shish"), 1200);
   }
 });
+
+ZT.bindFavButtons(pageEl);
 
 init();

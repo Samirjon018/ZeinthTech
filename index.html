@@ -11,7 +11,7 @@
     Bepul yetkazib berish: 1 000 000 so'mdan yuqori buyurtmalarda
   </div>
 
-  <header class="site-header">
+    <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">
         <img src="images/logo-mark.svg" alt="">
@@ -24,11 +24,19 @@
         <a href="#contact">Aloqa</a>
       </nav>
 
-      <a href="cart.html" class="cart-link">
-        🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span>
-      </a>
+      <div class="header-actions">
+        <a href="favorites.html" class="cart-link fav-link" aria-label="Sevimlilar">
+          ♡ <span class="fav-label">Sevimlilar</span>
+          <span id="fav-count" class="cart-count" hidden>0</span>
+        </a>
+        <a href="cart.html" class="cart-link">
+          🛒 Savat <span id="cart-count" class="cart-count" hidden>0</span>
+        </a>
+      </div>
     </div>
   </header>
+
+
    <main class="container" id="catalog">
     <div class="section-head">
       <span class="eyebrow">ZenithTech</span>
@@ -49,6 +57,10 @@
     <p id="result-count" class="result-count"></p>
 
     <div id="product-grid" class="product-grid"></div>
+        <section class="viewed-section" id="viewed-section" hidden>
+      <h3>Siz ko'rgan mahsulotlar</h3>
+      <div class="viewed-row" id="viewed-row"></div>
+    </section>
   </main>
 
   <footer class="site-footer" id="contact">
@@ -81,7 +93,8 @@
     </div>
   </footer>
 
-  <script src="js/cart.js"></script>
-<script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
